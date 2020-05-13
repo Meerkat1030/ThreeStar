@@ -1,0 +1,104 @@
+<!DOCTYPE html> <!-- 게시물 읽기 화면-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>create read page</title>
+    <link rel="icon" href="icon.ico">
+  <!-- 아이콘 -->
+    <style>
+        #wrap {width: 100%; height: 100%; font-size: 40px; color: #fff; text-align: center;}
+        #contents {float: left; width: 100%; height: 700px; background: #BDBDBD;}
+
+        div.yellow_logo{
+          display: initial;
+          position: absolute;
+          top: -50px;
+          left: -25px;
+        }
+
+        div.contents-icon{
+          display: initial;
+          position: absolute;
+          top: 30px;
+          left: 230px;
+        }
+
+        div.f-pct{
+          display: initial;
+          position: absolute;
+          top: 150px;
+          left: 670px;
+        }
+
+        div.tt{
+          display: initial;
+          position: absolute;
+          top: 300px;
+          left: 160px;
+        }
+
+        div.bin{
+          display: initial;
+          position: absolute;
+          top: 640px;
+          left: 1330px;
+        }
+
+        div.sh{
+          display: initial;
+          position: absolute;
+          top: 640px;
+          left: 1370px;
+        }
+
+        div.f-mdf{
+          display: initial;
+          position: absolute;
+          top: 630px;
+          left: 1400px;
+        }
+    </style>
+
+    <!-- 웹 폰트 -->
+
+</head>
+<body>
+
+  <!-- //footer 아이콘-->
+    <div id="wrap">
+        <div id="contents">
+
+              <div class="yellow_logo"><img src="icon/외주- WF로고 시안 최종_대지 1 사본.png" width="250" height="180" align="left"; alt="로고"></div>
+
+              <div class="contents-icon"><img src="icon/pin.png" width="25" height="25" align="left"; alt="지도 마크"></div>
+
+              <div class="f-pct">
+                <form action="/.html" accept-charset="utf-8" name="form_picture" method="post">
+                <input type="file" value="Photo" accept=".gif, .jpg, .png"/>
+                </form>
+              </div>
+
+              <div class="tt">
+                <input type="text" required placeholder="Comment" style="width:1200px;height:300px;"/>
+              </div>
+
+              <div class="bin">
+                <form action="/.html" accept-charset="utf-8" name="form_bin" method="post">
+                <input type="image" src="icon/bin.png" alt="삭제 버튼" style="width:30px;height:30px;"/>
+                </form>
+              </div>
+
+              <div class="sh">
+                <form action="/.html" accept-charset="utf-8" name="form_share" method="post">
+                <input type="image" src="icon/share.png" alt="공유 버튼" style="width:30px;height:30px;"/>
+                </form>
+              </div>
+
+              <div class="f-mdf">
+                <form action="/.html" accept-charset="utf-8" name="form_modify" method="post">
+                <input type="button" value="Modify" style="width:60px;height:30px;margin:15px;"/>
+                </form>
+              </div>
+    </div>
+</body>
+</html>

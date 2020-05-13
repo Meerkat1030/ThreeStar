@@ -1,0 +1,155 @@
+<!DOCTYPE html> <!-- 설정 창 화면(1)-->
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WFive</title>
+  <link rel="icon" href="icon.ico">
+
+  <!-- 아이콘 -->
+  <style>
+    #wrap {
+      width: 100%;
+      height: 100%;
+      font-size: 40px;
+      color: #fff;
+      text-align: center;
+    }
+
+    #side {
+      float: left;
+      width: 20%;
+      height: 700px;
+      background: #8C8C8C;
+    }
+
+    #contents {
+      float: right;
+      width: 80%;
+      height: 700px;
+      background: #BDBDBD;
+    }
+
+    div.yellow_logo {
+      display: initial;
+      position: absolute;
+      top: -50px;
+      left: -25px;
+    }
+
+    div.ust {
+      display: initial;
+      position: absolute;
+      top: 80px;
+      left: 70px;
+      font-size: 25px;
+    }
+
+    div.f_sett {
+      display: initial;
+      position: absolute;
+      top: 655px;
+      left: 15px;
+    }
+
+    div.sh {
+      height: 35px;
+      width: 700px;
+      border: 2px solid #8C8C8C;
+      background: #ffffff;
+      display: initial;
+      position: absolute;
+      top: 20px;
+      left: 790px;
+    }
+
+    div.stt {
+      display: initial;
+      position: absolute;
+      top: -20px;
+      left: 2px;
+    }
+
+    div.sb {
+      display: initial;
+      position: absolute;
+      top: -10px;
+      left: 660px;
+    }
+
+    div.f-nw {
+      display: initial;
+      position: absolute;
+      top: 630px;
+      left: 1400px;
+    }
+  </style>
+
+  <!-- 웹 폰트 -->
+
+</head>
+
+<body>
+
+  <!-- //footer 아이콘-->
+  <div id="wrap">
+    <div id="side">
+
+      <div class="yellow_logo"><img src="icon/logoY.png" width="250" height="180" align="left" ; alt="로고"></div>
+
+      <div class="ust">
+        <p>User's TimeLine
+        </p>
+      </div>
+
+      <div class="f_sett">
+        <form action="/.html" accept-charset="utf-8" name="form_settings" method="post">
+          <input type="image" src="icon/settings.png" alt="설정 버튼" style="width:30px;height:30px;" />
+        </form>
+      </div>
+
+    </div>
+
+    <div id="contents">
+
+      <div class="sh">
+        <div class="stt">
+          <input type="text" required placeholder="검색어 입력" style="width:685px;height:20px;font-size:16px;text-align:left;
+padding:6px;border:0px;outline:none;" />
+        </div>
+        <div class="sb">
+          <form action="/.html" accept-charset="utf-8" name="form_search" method="post">
+            <input type="image" src="icon/검색.png" alt="검색 버튼" style="width:30px;height:30px;border:0px;outline: none;" />
+          </form>
+        </div>
+      </div>
+
+      <div class="f-nw">
+        <form action="CU.html" accept-charset="utf-8" name="form_new" method="post">
+          <input type="button" onclick="location.href='CU.html'" value="NEW">
+        </form>
+      </div>
+      <script>
+        console.log("main page 진입 성공");
+        }
+      </script>
+    </div>
+    <!-- <script>
+    $("#BTN_GOOGLE_LOGIN").click(function(){
+      /*구글 인증을 provider 변수에 대체*/
+      var provider = new firebase.auth.GoogleAuthProvider();
+      /*provider(구글인증) 인증으로 로그인 처리*/
+      firebase.auth().signInWithPopup(provider).then(function(result){
+
+        window.location.href = "main.html"
+        //구글 로그인이 성공했다면
+        $('#AUTH_STATE').text(result.user.displayName + "님 로그인 하셨습니다.");
+      }).catch(function(error){//로그인 실패??
+        // 로그인이 실패했다면 실행
+        alert(error.message)
+      });
+    });
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+[debug] [2020-04-27T13:29:21.599Z] ----------------------------------------------------------------------
+[debug] [2020-04-27T13:29:21.601Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LEE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-27T13:29:21.601Z] CLI Version:   7.16.2
+[debug] [2020-04-27T13:29:21.601Z] Platform:      win32
+[debug] [2020-04-27T13:29:21.601Z] Node Version:  v12.16.1
+[debug] [2020-04-27T13:29:21.603Z] Time:          Mon Apr 27 2020 22:29:21 GMT+0900 (GMT+09:00)
+[debug] [2020-04-27T13:29:21.603Z] ----------------------------------------------------------------------
+[debug] [2020-04-27T13:29:21.603Z] 
+[debug] [2020-04-27T13:29:21.610Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-27T13:29:21.611Z] > authorizing via signed-in user
+[debug] [2020-04-27T13:29:21.611Z] [iam] checking project wfive-79380 for permissions ["firebase.projects.get"]
+[debug] [2020-04-27T13:29:21.613Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-27T13:29:21.613Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-27T13:29:22.102Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-27T13:29:22.108Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wfive-79380:testIamPermissions  
+
+[debug] [2020-04-27T13:29:23.039Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-27T13:29:23.040Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380  
+ 
+[debug] [2020-04-27T13:29:23.979Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\LEE\Desktop\WFive'...
+[info] 
+[debug] [2020-04-27T13:29:23.981Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380/webApps/-/config  
+ 
+[debug] [2020-04-27T13:29:25.117Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-04-28T14:12:04.229Z] ----------------------------------------------------------------------
+[debug] [2020-04-28T14:12:04.230Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LEE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-28T14:12:04.231Z] CLI Version:   7.16.2
+[debug] [2020-04-28T14:12:04.231Z] Platform:      win32
+[debug] [2020-04-28T14:12:04.231Z] Node Version:  v12.16.1
+[debug] [2020-04-28T14:12:04.232Z] Time:          Tue Apr 28 2020 23:12:04 GMT+0900 (GMT+09:00)
+[debug] [2020-04-28T14:12:04.233Z] ----------------------------------------------------------------------
+[debug] [2020-04-28T14:12:04.233Z] 
+[debug] [2020-04-28T14:12:04.246Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-28T14:12:04.246Z] > authorizing via signed-in user
+[debug] [2020-04-28T14:12:04.247Z] [iam] checking project wfive-79380 for permissions ["firebase.projects.get"]
+[debug] [2020-04-28T14:12:04.248Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-28T14:12:04.248Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-28T14:12:04.718Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-28T14:12:04.725Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wfive-79380:testIamPermissions  
+
+[debug] [2020-04-28T14:12:05.684Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-28T14:12:05.685Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380  
+ 
+[debug] [2020-04-28T14:12:06.558Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\LEE\Desktop\WFive'...
+[info] 
+[debug] [2020-04-28T14:12:06.561Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380/webApps/-/config  
+ 
+[debug] [2020-04-28T14:12:07.609Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-05-04T13:14:54.504Z] ----------------------------------------------------------------------
+[debug] [2020-05-04T13:14:54.506Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LEE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-05-04T13:14:54.506Z] CLI Version:   7.16.2
+[debug] [2020-05-04T13:14:54.506Z] Platform:      win32
+[debug] [2020-05-04T13:14:54.506Z] Node Version:  v12.16.1
+[debug] [2020-05-04T13:14:54.508Z] Time:          Mon May 04 2020 22:14:54 GMT+0900 (GMT+09:00)
+[debug] [2020-05-04T13:14:54.508Z] ----------------------------------------------------------------------
+[debug] [2020-05-04T13:14:54.508Z] 
+[debug] [2020-05-04T13:14:54.518Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-04T13:14:54.519Z] > authorizing via signed-in user
+[debug] [2020-05-04T13:14:54.519Z] [iam] checking project wfive-79380 for permissions ["firebase.projects.get"]
+[debug] [2020-05-04T13:14:54.520Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-05-04T13:14:54.521Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-05-04T13:14:54.900Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-04T13:14:54.906Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wfive-79380:testIamPermissions  
+
+[debug] [2020-05-04T13:14:55.872Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-04T13:14:55.873Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380  
+ 
+[debug] [2020-05-04T13:14:56.540Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\LEE\Desktop\WFive'...
+[info] 
+[debug] [2020-05-04T13:14:56.542Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380/webApps/-/config  
+ 
+[debug] [2020-05-04T13:14:57.626Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-05-12T12:21:56.606Z] ----------------------------------------------------------------------
+[debug] [2020-05-12T12:21:56.608Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LEE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-05-12T12:21:56.608Z] CLI Version:   7.16.2
+[debug] [2020-05-12T12:21:56.608Z] Platform:      win32
+[debug] [2020-05-12T12:21:56.608Z] Node Version:  v12.16.1
+[debug] [2020-05-12T12:21:56.610Z] Time:          Tue May 12 2020 21:21:56 GMT+0900 (GMT+09:00)
+[debug] [2020-05-12T12:21:56.610Z] ----------------------------------------------------------------------
+[debug] [2020-05-12T12:21:56.610Z] 
+[debug] [2020-05-12T12:21:56.621Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-12T12:21:56.621Z] > authorizing via signed-in user
+[debug] [2020-05-12T12:21:56.621Z] [iam] checking project wfive-79380 for permissions ["firebase.projects.get"]
+[debug] [2020-05-12T12:21:56.623Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-05-12T12:21:56.623Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-05-12T12:21:57.054Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-12T12:21:57.061Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wfive-79380:testIamPermissions  
+
+[debug] [2020-05-12T12:21:57.997Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-12T12:21:57.998Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380  
+ 
+[debug] [2020-05-12T12:21:58.869Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\LEE\Desktop\WFive'...
+[info] 
+[debug] [2020-05-12T12:21:58.872Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380/webApps/-/config  
+ 
+[debug] [2020-05-12T12:22:00.477Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-05-13T07:23:27.348Z] ----------------------------------------------------------------------
+[debug] [2020-05-13T07:23:27.350Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LEE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-05-13T07:23:27.350Z] CLI Version:   7.16.2
+[debug] [2020-05-13T07:23:27.350Z] Platform:      win32
+[debug] [2020-05-13T07:23:27.350Z] Node Version:  v12.16.1
+[debug] [2020-05-13T07:23:27.352Z] Time:          Wed May 13 2020 16:23:27 GMT+0900 (GMT+09:00)
+[debug] [2020-05-13T07:23:27.352Z] ----------------------------------------------------------------------
+[debug] [2020-05-13T07:23:27.352Z] 
+[debug] [2020-05-13T07:23:27.361Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-13T07:23:27.361Z] > authorizing via signed-in user
+[debug] [2020-05-13T07:23:27.362Z] [iam] checking project wfive-79380 for permissions ["firebase.projects.get"]
+[debug] [2020-05-13T07:23:27.364Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-05-13T07:23:27.364Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-05-13T07:23:27.763Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-13T07:23:27.772Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wfive-79380:testIamPermissions  
+
+[debug] [2020-05-13T07:23:28.280Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-13T07:23:28.281Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380  
+ 
+[debug] [2020-05-13T07:23:28.927Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\LEE\Desktop\WFive'...
+[info] 
+[debug] [2020-05-13T07:23:28.930Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wfive-79380/webApps/-/config  
+ 
+[debug] [2020-05-13T07:23:30.098Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000

@@ -1,0 +1,33 @@
+.contents-icon {
+
+      margin-bottom: 2%;
+      width: 25px;
+      height: 25px;
+    }
+
+    .contents-icon img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .title1 {
+      display: initial;
+      margin-top: 2%;
+    }
+
+    .f-pct {
+      margin-top: 30px;
+    }
+
+    .f-crt {
+      float: right;
+    }
+
+    .tt textarea {
+      height: 700px;
+      padding: 10px;
+    }
+
+    #thumbnailImgs {
+      margin-top: 20px;
+    }

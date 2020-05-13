@@ -1,0 +1,56 @@
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "맑은 고딕";
+    }
+
+    body {
+      background: #e4e4e4;
+    }
+
+    #wrap {
+      width: 1200px;
+      margin: 3% auto;
+    }
+
+    section {
+      margin-top: 2%;
+    }
+
+    /* 화면 너비 0 ~ 1200px */
+    @media (max-width: 1280px) {
+      #wrap {
+        width: 95%;
+      }
+    }
+
+    /* 화면 너비 0 ~ 768px */
+    @media (max-width: 768px) {
+      #wrap {
+        width: 100%;
+      }
+    }
+
+    /* 화면 너비 0 ~ 480px */
+    @media (max-width: 480px) {
+      #wrap {
+        width: 100%;
+      }
+    }
+
+    .logo {
+      margin: -6% -3.5% -2% -3.5%;
+      width: 250px;
+      height: 180px;
+
+    }
+
+    .logo img {
+      width: 98%;
+      height: 90%;
+      cursor: pointer;
+    }
+    hr {
+      margin-top: -3%;
+      border-color: rgb(194, 191, 191);
+    }

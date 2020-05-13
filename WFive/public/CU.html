@@ -1,0 +1,295 @@
+<head>
+  <meta charset="UTF-8">
+  <title>WFive</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/BasicCss.css">
+  <link rel="stylesheet" href="css/CRUDCss.css">
+  <style>
+    /*마커 설명 표시 css*/
+    [data-tooltip-text]:hover {
+      position: relative;
+    }
+
+    [data-tooltip-text]:after {
+      -webkit-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+      -moz-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+      transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+
+      background-color: rgba(0, 0, 0, 0.69);
+
+      -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+      -moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+      box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+
+      color: #FFFFFF;
+      font-size: 12px;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      position: absolute;
+      width: auto;
+      min-width: 50px;
+      max-width: 300px;
+      word-wrap: break-word;
+
+      z-index: 9999;
+
+      opacity: 0;
+      left: -9999px;
+      top: 90%;
+
+      content: attr(data-tooltip-text);
+    }
+
+    [data-tooltip-text]:hover:after {
+      top: 130%;
+      left: 0;
+      opacity: 1;
+      white-space: pre;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div id="wrap">
+    <div class="logo">
+      <img src="icon/logoY.PNG" onclick="main()" title="Main">
+    </div>
+    <hr>
+    <section>
+      <div class="contents-icon">
+        <span data-tooltip-text="마커를 눌러 위치 찾기"><img src="icon/pin.png"></span>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" name="Title" id="title" class="form-control" placeholder="Title">
+      </div>
+
+      <div class="input-group">
+        <textarea type="text" class="form-control" id="comment" name="Comment" required placeholder="Comment" style="height: 200px;"></textarea>
+      </div>
+
+      <div class="f-pct">
+        <input type="file" id="upImgFiles" onChange="uploadImgPreview();" accept="image/*" multiple>
+        <div id="thumbnailImgs"></div>
+      </div>
+      <!-- <div id="filesubmit">
+        <input type="file" id="upImgFiles" class="file-select" accept="image/*" />
+        <!-- <button class="file-submit">사진 등록</button>
+      </div> -->
+
+      <div class="f-crt">
+        <div class="upload btn" id="upload">
+          <button type="button" class="btn btn-outline-secondary" name="upload">Upload</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- 여기부터-->
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js">
+  firebase.analytics();
+</script>
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script><!-- firebase.auth()함수 에러 잡아주는 코드-->
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+<script document.cookie="safeCookie1=foo; SameSite=Lax" ; document.cookie="safeCookie2=foo" ; document.cookie="crossCookie=bar; SameSite=None; Secure" ;></script>
+<script src="./js/fireinit.js"></script>
+<script src="./js/time.js"></script>
+
+
+<!-- //현재 시간을 가져오는 js 파일 -->
+
+
+<script>
+  //사진추가
+  function uploadImgPreview() {
+    // @breif 업로드 파일 읽기
+    let fileList = document.getElementById("upImgFiles").files;
+    // @breif 업로드 파일 읽기
+    function readAndPreview(fileList) {
+      // @breif 이미지 확장자 검사
+
+      let reader = new FileReader();
+      reader.addEventListener("load", function() {
+        let image = new Image();
+        image.width = "150";
+        image.height = "150";
+        image.title = fileList.name;
+        image.src = this.result;
+        // @details 이미지 확장자 검사
+        document.getElementById("thumbnailImgs").appendChild(image);
+      }, false);
+      // @details readAsDataURL( )을 통해 파일의 URL을 읽어온다.
+      if (fileList) {
+        reader.readAsDataURL(fileList);
+      }
+
+    }
+    if (fileList) {
+      // @details readAndPreview() 함수를 forEach문을통한 반복 수행
+      [].forEach.call(fileList, readAndPreview);
+    }
+  }
+</script>
+<script>
+  //DB저장
+  console.log("cu page 진입성공");
+
+  var firebaseDatabase; // firebaseDatabase 전역변수
+  var title;
+  var comment;
+  var userInfo;
+  var auth;
+  var url; //사진이 저장될 url
+  var img;
+  auth = firebase.auth();
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      //인증성공부
+      console.log("success");
+      console.log(user);
+      //메모리스트 출력
+      userInfo = user; //로그인이 성공을 하면 user의 정보 즉, uid등을 이용하기 위해 userInfo에 저장
+    } else {
+      //인증실패부
+      auth.signInWithPopup(authProvider);
+    }
+  });
+
+  //데이터베이스 모듈객체 가져오기
+  firebaseDatabase = firebase.database();
+
+  function userSessionCheck() {
+    console.log(currentTime);
+  }
+  userSessionCheck();
+  $(document).ready(function() {
+    console.log("cu page 진입성공2");
+    //CU화면 upload버튼 눌렀을 때
+    $(document).on('click', '.upload', function() {
+      //내가 쓴글 가져오기 - jquery방식으로 가져왔다.
+      title = $('#title').val();
+      comment = $('#comment').val();
+      url = $('#upImgFiles').val();
+
+
+      //비어 있는 항목이 있다면 저장 불가능하게
+      if (title === '') {
+        alert("빈 항목이 있습니다 다시한번 확인해 주세요.");
+        return;
+      }
+      if (comment === '') {
+        alert("빈 항목이 있습니다 다시한번 확인해 주세요.");
+        return;
+      }
+      if (url === '') {
+        alert("빈 항목이 있습니다 다시한번 확인해 주세요.");
+        return;
+      }
+      //JS에서 ==비교연산자가 ===
+      saveDiary();
+    });
+  });
+
+  function saveDiary() {
+    var fileButton = document.getElementById("upImgFiles");
+    if (fileButton) {
+      var file = fileButton.files[0];
+      // Create the file metadata
+      var metadata = {
+        contentType: 'image/jpeg'
+      };
+      var storageRef = firebase.storage().ref();
+      // Upload file and metadata to the object 'images/mountains.jpg'
+      var uploadTask = storageRef.child('images/' + userInfo.uid).put(file, metadata);
+      // Listen for state changes, errors, and completion of the upload.
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+        function (snapshot) {//snapshot함수
+          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: // or 'paused'
+              console.log('Upload is paused');
+              break;
+            case firebase.storage.TaskState.RUNNING: // or 'running'
+              console.log('Upload is running');
+              break;
+          }
+        }, function (error) { //사진업로드에 에러가 생기면
+          // A full list of error codes is available at
+          // https://firebase.google.com/docs/storage/web/handle-errors
+          switch (error.code) {
+            case 'storage/object-not-found':
+              // File doesn't exist
+              console.log("File doesn't exist");
+              break;
+            case 'storage/unauthorized':
+              // User doesn't have permission to access the object
+              console.log("User doesn't have permission to access the object");
+              break;
+            case 'storage/canceled':
+              // User canceled the upload
+              console.log("User canceled the upload");
+              break;
+            case 'storage/unknown':
+              // Unknown error occurred, inspect the server response
+              console.log("Unknown error occurred, inspect the server response");
+              break;
+            default: console.log("other error");
+          }
+        }, function () {//사진업로드가 성공하면 실행되는 함수
+          // Upload completed successfully, now we can get the download URL
+          uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+            console.log('File available at', downloadURL);
+            diaryRef = firebaseDatabase.ref("diary/" + userInfo.uid);
+            diaryRef.push({
+              title: title,
+              comment: comment,
+              photo: downloadURL,
+              createtime: currentTime
+            });
+            alert("일기 저장이 완료되었습니다."); //부트스트렙으로 화려한걸로 바꾸기
+          });
+        });
+
+
+
+
+      $('#title').val("");
+      $('#comment').val("");
+      $('#upImgFiles').val("");
+      $('#thumbnailImgs').val("");
+    }
+    return true;
+
+  }
+</script>
+<script>
+  //로고 클릭시 메인화면으로
+  function main() {
+    if (confirm("메인 화면으로 돌아가시겠습니까? \n일기는 저장되지않습니다.") == true) {
+      window.location.href = "Main.html"
+    } else {
+      return;
+    }
+  }
+</script>
+
+<!--부트스트랩 src -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</html>
